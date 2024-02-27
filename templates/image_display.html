@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Processed Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Processed Image</h1>
-    <img src="{{ image_url }}" alt="Processed image">
-    <p>Proportion of plaque : {{ plaque_pro }} %</p>
-    <br>
-    <a href="/">Upload another image</a>
+    <div class="container">
+        <h1 class="processed-title">おくちの健康状態</h1>
+        <img src="{{ image_url }}" alt="Processed image" class="processed-image">
+        <div class="result-text">
+            <p>緑色の部分が歯垢です。しっかり磨きましょう。</p>
+            <div>
+                <h4>歯垢の割合 : {{ plaque_pro }} %</h4>
+                <h4>点数：20点</h4>
+            </div>
+        </div>
+        <a href="/" class="another-image-link">やり直す</a>
+    </div>
 </body>
 </html>

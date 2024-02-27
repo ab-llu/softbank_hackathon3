@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.content {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-title {
+    color: #333;
+    font-size: 24px;
+}
+
+.upload-form {
+    margin: 20px 0;
+}
+
+.input-file {
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.preview-placeholder {
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    background-color: #f0f0f5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex; /* 中央揃えのために追加 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+#preview {
+    max-height: 200px;
+    border-radius: 5px;
+    display: none; 
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* 必要に応じて調整 */
+    max-width: 600px; /* 必要に応じて調整 */
+}
+
+.processed-title {
+    color: #4CAF50; /* 健康的な印象の色 */
+    margin-bottom: 20px;
+}
+
+.processed-image {
+    max-width: 100%; /* 画像がコンテナを超えないように */
+    height: auto;
+    border-radius: 5px; /* スタイリッシュな見た目のため */
+}
+
+.result-text p {
+    color: #333;
+    font-size: 18px;
+}
+
+.result-text div h4 {
+    font-size: 1.5em; /* 大きなフォントサイズ */
+    margin: 10px 0; /* 行間を狭める */
+    color: #333; /* テキストの色を変更して目立たせる */
+}
+
+.another-image-link {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* リンクの下線を消す */
+    font-weight: bold;
+}

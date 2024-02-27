@@ -92,7 +92,7 @@ def process_image(image_path):
             area_per_class[cls] += area
         else:
             area_per_class[cls] = area
-    plaque_pro = area_per_class[1] / area_per_class[2] * 100
+    plaque_pro = np.round(area_per_class[1] / area_per_class[2] * 100)
     
     return [masked_im_path, plaque_pro]
 
