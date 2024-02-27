@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload</title>
+    <style>
+        #preview-container {
+            display: none; /* 最初はプレビュー部分を隠す */
+        }
+    </style>
+    <script>
+        // ファイルが選択されたときに実行される関数
+        function previewFile() {
+            const previewContainer = document.getElementById('preview-container'); // プレビューコンテナ
+            const preview = document.getElementById('preview'); // プレビュー表示するimg要素
+            const file = document.querySelector('input[type=file]').files[0]; // 選択されたファイル
+            const reader = new FileReader();
+            const allowedTypes = ['image/jpeg', 'image/png'];
+
+            // ファイルが画像であるかチェック
+            if (allowedTypes.includes(file.type)) {
+                reader.onloadend = function() {
+                    preview.src = reader.result; // プレビューを表示
+                    previewContainer.style.display = 'block'; // プレビューコンテナを表示
+                }
+                if (file) {
+                    reader.readAsDataURL(file); // ファイルをDataURLとして読み込む
+                } else {
+                    preview.src = "";
+                    previewContainer.style.display = 'none'; // ファイルがない場合はプレビューコンテナを隠す
+                }
+            } else {
+                alert('Please upload an image file (jpg, png).'); // 警告メッセージを表示
+                document.querySelector('input[type=file]').value = ''; // ファイル選択をリセット
+                preview.src = ""; // プレビューをクリア
+                previewContainer.style.display = 'none'; // 画像ファイルでない場合もプレビューコンテナを隠す
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" onchange="previewFile()">
+        <input type="submit" value="Upload Image">
+    </form>
+    <div id="preview-container">
+        <p>Image preview:</p>
+        <img id="preview" src="" height="200" alt="Image preview...">
+    </div>
+</body>
+</html>
