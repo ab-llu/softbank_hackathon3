@@ -1,0 +1,15 @@
+steps:
+# 依存関係のインストール
+- name: 'python:3.8'
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  - |
+    pip install -r requirements.txt
+    pip install git+https://github.com/facebookresearch/detectron2.git
+
+# その他必要なビルドステップ
+# 例: アプリケーションのデプロイ
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args: ['app', 'deploy']
